@@ -1,0 +1,44 @@
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+
+  #royalSliderMiniHolder .a-left .a-left-mark {
+    background: transparent url(../img/JP_left_@2x.png);
+    background-size: 27px 18px !important;
+  }
+  #royalSliderMiniHolder .a-center .a-center-mark {
+    background: transparent url(../img/JP_plus_@2x.png);
+    background-size: 22px 22px !important;
+  }
+  #royalSliderMiniHolder .a-right .a-right-mark {
+    background: transparent url(../img/JP_right_@2x.png);
+    background-size: 27px 18px !important;
+  }
+  
+  #royalSliderBigHolder .a-left .a-left-mark {
+    background: transparent url(../img/JP_left_@2x.png);
+    background-size: 27px 18px !important;
+  }
+  #royalSliderBigHolder .a-center .a-center-mark {
+    background: transparent url(../img/JP_close_@2x.png);
+    background-size: 21px 21px !important;
+  }
+  #royalSliderBigHolder .a-right .a-right-mark {
+    background: transparent url(../img/JP_right_@2x.png);
+    background-size: 27px 18px !important;
+  }
+  
+  #royalSliderHomeHolder .a-left .a-left-mark {
+    background: transparent url(../img/JP_left_w_@2x.png);
+    background-size: 27px 18px !important;
+  }
+  /*
+  #royalSliderHomeHolder .a-center .a-center-mark {
+    background: transparent url(../img/JP_close_w_@2x.png);
+    background-size: 21px 21px !important;
+  }
+  */
+  #royalSliderHomeHolder .a-right .a-right-mark {
+    background: transparent url(../img/JP_right_w_@2x.png);
+    background-size: 27px 18px !important;
+  }
+  
+}

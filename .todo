@@ -1,0 +1,81 @@
+login
+logout
+dashboard
+
+edited style.css and custom.css in admin
+edited all blades in admin
+
+design strip (Powered by Coperor)
+design logout button
+add captcha to login page
+send mail to dearth.com
+
+
+delete all single folders
+delete all get routes
+
+newline in all description - {!! nl2br($data->description) !!}
+image gallery design
+icons in all add
+create route catch middleware
+contactus
+
+works
+    title
+    address
+    year
+    description
+    thumbnail images
+
+works gallery
+    image
+    work id
+
+homes
+add homes
+view homes
+update homes
+delete homes
+
+homes gallery
+view images
+add images
+delete images
+
+add, edit, delete
+office
+about us
+    title (about us)
+    subtitle
+    description
+    thumbnail
+
+awards
+    name
+    description
+
+people
+    name
+    designation
+    profile (image)
+
+contact
+    map
+    location
+    telephone
+    mobile
+    email
+    blog
+
+archives
+publications
+    title
+    description
+    image
+
+chinthaer
+    title
+    description
+    image
+
+edit location to which the image is stored

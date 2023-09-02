@@ -1,0 +1,243 @@
+html, body
+{
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    /* overflow-y: hidden; */
+    font-size: 15px;
+}
+
+.go-back
+{
+    transition: transform 0.3s ease-in-out;
+}
+
+.go-back:hover
+{
+    transform: scale(1.02)
+}
+
+#footer 
+{
+    background: #1a1a18;
+    color: #cdcecf;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+#footer .credits
+{
+    font-size: 14px;
+}
+
+#footer .credits a
+{
+    color: white;
+}
+
+#footer .version
+{
+    float: right;
+}
+
+.monogram
+{
+    width: 60px;
+    height: 100%;
+}
+
+.thumbnail
+{
+    width: 240px;
+}
+
+.hover01 img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.hover01:hover img {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.profile
+{
+    width: 250px;
+}
+
+.archive
+{
+    width: 150px;
+}
+
+.navbar
+{
+    margin-bottom: auto;
+}
+
+.read-more, .read-less 
+{
+    cursor: pointer;
+    color: black!important;
+}
+
+#hero p span
+{
+    color: black!important;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main_body{
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.nav-link
+{
+    color: white;
+}
+
+.nav-link:hover
+{
+    color: white;
+}
+
+.tab-container ul{
+    border-bottom: 0;
+    padding: 3px;
+    background-color: #1a1a18;
+    border-radius: 17px ;
+    width: fit-content;
+}
+
+a
+{
+    text-decoration: none;
+    color: #1a1a18;
+}
+
+a i
+{
+    font-size: 20px;
+}
+
+a:hover
+{
+    color: #1a1a18;
+    cursor: pointer;
+}
+
+ul li{
+ padding: 5px;
+}
+
+.tab-container button{
+    border-radius: 17px!important;
+    padding: 7px!important;
+}
+
+.btn-all
+{
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: solid 2px #000;
+    color: #000;
+    background-color: transparent;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+}
+
+.btn-all:hover
+{
+    background-color: #000;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: solid 2px #000;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+}
+
+.nav-link.active
+{
+    border-color: white !important;
+}
+
+.btn-cancel
+{
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: solid 2px #353530;
+    color: #000;
+    background-color: transparent;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;  
+}
+
+.btn-cancel:hover
+{
+    background-color: #353530;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: solid 2px #353530;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+}
+
+.logout-button
+{
+    font-size: 35px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: solid 2px transparent;
+    color: #000;
+}
+
+.logout-button:hover
+{
+    border: solid 2px #000;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #000;
+    color: white;
+}
+
+.logo
+{
+    margin-bottom: auto;
+}
+
+@media (max-width: 992px)
+{
+    .main_body{
+        margin-top: 40px;
+        margin-left: 0;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

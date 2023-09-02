@@ -1,0 +1,8 @@
+.read-more, .read-less
+{
+    font-size: 12px!important;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-left: 10px;
+    color: #000;
+}
