@@ -21,7 +21,7 @@ class ContactFormController extends Controller
             'message' => $message
         ];
 
-        $adminMail = 'team@coperor.in';
+        $adminMail = 'r.anaghaaa@gmail.com';
         Notification::route('mail', $adminMail)
             ->notify(new ContactFormNotification($contactDetails));
 
