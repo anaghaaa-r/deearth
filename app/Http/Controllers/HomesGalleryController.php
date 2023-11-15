@@ -7,7 +7,6 @@ use App\Models\Home;
 use App\Models\HomeGallery;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
 
 class HomesGalleryController extends Controller
 {
@@ -64,7 +63,7 @@ class HomesGalleryController extends Controller
             else
             {
                 return response()->json([
-                    'status' => 'false',
+                    'status' => false,
                     'message' => 'No image was uploaded.'
                 ], 400);
             }
@@ -76,7 +75,6 @@ class HomesGalleryController extends Controller
                 'error' => 'Error: ' . $e->getMessage()
             ], 400);
         }
-        
     }
 
     public function deleteImage($id)

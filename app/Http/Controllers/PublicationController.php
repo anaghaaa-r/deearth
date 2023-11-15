@@ -154,6 +154,8 @@ class PublicationController extends Controller
 
             $publication->delete();
 
+            $publication->gallery()->delete();
+
             return response()->json([
                 'status' => true,
                 'message' => 'Publication deleted successfully.'

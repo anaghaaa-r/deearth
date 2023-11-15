@@ -56,7 +56,7 @@ class ChinthaerController extends Controller
         catch (\Exception $e) {
             return response()->json([
                 'status' => false,
-                'message' => 'Error adding to publications.',
+                'message' => 'Error adding to chinthaer.',
                 'error' => 'Error: ' . $e->getMessage()
             ], 400);
         }

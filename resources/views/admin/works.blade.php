@@ -164,7 +164,7 @@
                                         <p class="text-danger mb-2 lead" style="font-size: 13px; color: brown;">*monogram dimension should be 69px X 64px</p>
                                         <label for="thumbnail">Thumbnail Image</label>
                                         <input type="file" name="thumbnail" id="thumbnail" class="form-control">
-                                        <p class="text-danger mb-2 lead" style="font-size: 13px; color: brown;">*thumbnail dimension should be 512px X 240px</p>
+                                        <p class="text-danger mb-2 lead" style="font-size: 13px; color: brown;">*thumbnail dimension should be 404px X 270px</p>
 
                                     </div>
                                     <div class="modal-footer">
@@ -255,7 +255,7 @@
                                                         <p class="text-danger mb-2 lead" style="font-size: 13px; color: brown;">*monogram dimension should be 69px X 64px</p>
                                                         <label for="thumbnail">Thumbnail</label>
                                                         <input type="file" name="thumbnail" id="thumbnail" class="form-control">
-                                                        <p class="text-danger mb-2 lead" style="font-size: 13px; color: brown;">*thumbnail dimension should be 512px X 240px</p>
+                                                        <p class="text-danger mb-2 lead" style="font-size: 13px; color: brown;">*thumbnail dimension should be 404px X 270px</p>
 
                                                     </div>
                                                     <div class="modal-footer">

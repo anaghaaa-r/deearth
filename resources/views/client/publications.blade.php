@@ -148,14 +148,22 @@
                 <h2 class="mb10">PUBLICATIONS</h2>
 
                 @foreach ($publications as $publication)
+                <div style="width: 100%; float:left;">
+                  <a href="{{ url('publication-details', $publication->id) }}"><img src="{{ asset('storage/' . $publication->image) }}" class="paraimg"></a>
 
-                <img src="{{ asset('storage/' . $publication->image) }}" class="paraimg">
-                <h3 class="mb0 blkcolor">{{ $publication->name }}</h3>
-                <p>
-                <div class="row read-more-less" data-id="100">
-                  <p class="read-toggle" data-id='{{ $publication->id }}'>{!! nl2br($publication->description) !!}</p>
+                  <a href="{{ url('publication-details', $publication->id) }}">
+                    <h3 class="mb0 blkcolor">{{ $publication->name }}</h3>
+                  </a>
+
+                  <p>
+                  <div class="row read-more-less" data-id="100">
+                    <a href="{{ url('publication-details', $publication->id) }}">
+                      <p class="read-toggle" data-id='{{ $publication->id }}'>{!! nl2br($publication->description) !!}</p>
+                    </a>
+
+                  </div>
+                  </p>
                 </div>
-                </p>
 
                 @endforeach
 
@@ -163,7 +171,7 @@
             </div>
           </div>
         </div>
-        <div id="dynamic">&nbsp;</div>
+
       </div>
     </div>
     <!-- /content -->

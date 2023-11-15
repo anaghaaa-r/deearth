@@ -12,4 +12,9 @@ class Publication extends Model
     protected $table = 'publications';
 
     protected $fillable = ['order','order_suffix', 'name', 'description', 'image'];
+
+    public function gallery()
+    {
+        return $this->hasMany(PublicationsGallery::class, 'publication_id');
+    }
 }

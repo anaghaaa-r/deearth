@@ -18,8 +18,8 @@ class ClientSideViewsController extends Controller
 {
     public function viewHomes()
     {
-        $homes = Home::orderBy('order', 'desc')
-                ->orderBy('order_suffix', 'desc')
+        $homes = Home::orderBy('order', 'asc')
+                ->orderBy('order_suffix', 'asc')
                 ->get();
 
         return view('client.homes', compact('homes'));
@@ -41,8 +41,8 @@ class ClientSideViewsController extends Controller
 
     public function viewUrbanDesigns()
     {
-        $urbandesigns = UrbanDesign::orderBy('order', 'desc')
-                        ->orderBy('order_suffix', 'desc')
+        $urbandesigns = UrbanDesign::orderBy('order', 'asc')
+                        ->orderBy('order_suffix', 'asc')
                         ->get();
 
         return view('client.urbandesign', compact('urbandesigns'));
@@ -65,8 +65,8 @@ class ClientSideViewsController extends Controller
 
     public function viewInstitutions()
     {
-        $institutions = Institution::orderBy('order', 'desc')
-                        ->orderBy('order_suffix', 'desc')
+        $institutions = Institution::orderBy('order', 'asc')
+                        ->orderBy('order_suffix', 'asc')
                         ->get();
 
         return view('client.institution', compact('institutions'));
@@ -85,8 +85,8 @@ class ClientSideViewsController extends Controller
 
     public function viewCommercials()
     {
-        $commercials = Commercial::orderBy('order', 'desc')
-                    ->orderBy('order_suffix', 'desc')
+        $commercials = Commercial::orderBy('order', 'asc')
+                    ->orderBy('order_suffix', 'asc')
                     ->get();
 
         return view('client.commercial', compact('commercials'));
@@ -105,15 +105,15 @@ class ClientSideViewsController extends Controller
 
     public function viewAboutus()
     {
-        $aboutus = AboutUs::orderBy('id', 'desc')->get();
+        $aboutus = AboutUs::orderBy('id', 'asc')->get();
 
         return view('client.aboutus', compact('aboutus'));
     }
 
     public function viewAwards()
     {
-        $awards = Award::orderBy('order', 'desc')
-                ->orderBy('order_suffix', 'desc')
+        $awards = Award::orderBy('order', 'asc')
+                ->orderBy('order_suffix', 'asc')
                 ->get();
 
         return view('client.awards', compact('awards'));
@@ -121,8 +121,8 @@ class ClientSideViewsController extends Controller
 
     public function viewPeople()
     {
-        $people = People::orderBy('order', 'desc')
-                ->orderBy('order_suffix', 'desc')
+        $people = People::orderBy('order', 'asc')
+                ->orderBy('order_suffix', 'asc')
                 ->get();
 
         return view('client.people', compact('people'));
@@ -130,27 +130,41 @@ class ClientSideViewsController extends Controller
 
     public function viewContact()
     {
-        $contacts = Contact::orderBy('id', 'desc')->get();
+        $contacts = Contact::orderBy('id', 'asc')->get();
 
         return view('client.contact', compact('contacts'));
     }
 
     public function viewPublications()
     {
-        $publications = Publication::orderBy('order', 'desc')
-                    ->orderBy('order_suffix', 'desc')
+        $publications = Publication::orderBy('order', 'asc')
+                    ->orderBy('order_suffix', 'asc')
                     ->get();
 
         return view('client.publications', compact('publications'));
     }
 
+    public function publicationDetails($id)
+    {
+        $publication = Publication::findOrFail($id);
+
+        return view('client.publication-details', compact('publication'));
+    }
+
     public function viewChinthaer()
     {
-        $chinthaers = Chinthaer::orderBy('order', 'desc')
-                    ->orderBy('order_suffix', 'desc')
+        $chinthaers = Chinthaer::orderBy('order', 'asc')
+                    ->orderBy('order_suffix', 'asc')
                     ->get();
 
         return view('client.chinthaer', compact('chinthaers'));
+    }
+
+    public function chinthaerDetails($id)
+    {
+        $chinthaer = Chinthaer::findOrFail($id);
+
+        return view('client.chinthaer-details', compact('chinthaer'));
     }
 
 }

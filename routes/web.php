@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AwardsController;
 use App\Http\Controllers\ChinthaerController;
+use App\Http\Controllers\ChinthaerGalleryController;
 use App\Http\Controllers\ClientSideViewsController;
 use App\Http\Controllers\CommercialController;
 use App\Http\Controllers\CommercialGalleryController;
@@ -18,13 +19,12 @@ use App\Http\Controllers\InstitutionsGalleryController;
 use App\Http\Controllers\ManageViewsController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\PublicationsGalleryController;
 use App\Http\Controllers\UrbanDesignController;
 use App\Http\Controllers\UrbanDesignGalleryController;
 
-// test
-Route::get('/test', function () {
-    return view('admin.test');
-});
+
+
 
 // client side
 Route::get('/', function () {
@@ -49,7 +49,11 @@ Route::get('/contact', [ClientSideViewsController::class, 'viewContact']);
 
 Route::get('/publications', [ClientSideViewsController::class, 'viewPublications']);
 
+Route::get('/publication-details/{id}', [ClientSideViewsController::class, 'publicationDetails']);
+
 Route::get('/chinthaer', [ClientSideViewsController::class, 'viewChinthaer']);
+
+Route::get('/chinthaer-details/{id}', [ClientSideViewsController::class, 'chinthaerDetails']);
 
 Route::get('/home-details/{id}', [ClientSideViewsController::class, 'homeDetails']);
 
@@ -83,7 +87,8 @@ Route::get('/management/change-password', function () {
 })->name('change-password')->middleware('auth');
 
 // gallery
-Route::get('/management/work-gallery/{context}/{id}', [ManageViewsController::class, 'viewGallery'])->name('view.gallery')->middleware('auth');
+
+Route::get('/management/gallery/{context}/{id}', [ManageViewsController::class, 'viewGallery'])->name('view.gallery')->middleware('auth');
 
 
 // authorization
@@ -167,11 +172,17 @@ Route::delete('/contact/delete/{id}', [ContactsController::class, 'delete'])->na
 
 Route::post('/publication/add', [PublicationController::class, 'add'])->name('add.publication')->middleware('auth');
 Route::post('/publication/edit/{id}', [PublicationController::class, 'update'])->name('edit.publication')->middleware('auth');
+Route::post('/publications/image-gallery/{id}', [PublicationsGalleryController::class, 'addImage'])->name('add.publications.image')->middleware('auth');
+
 Route::delete('/publication/delete/{id}', [PublicationController::class, 'delete'])->name('delete.publication')->middleware('auth');
+Route::delete('/delete-image/publications/{id}', [PublicationsGalleryController::class, 'deleteImage'])->name('delete.publications.image')->middleware('auth');
 
 
 // chinthaer
 
 Route::post('/chinthaer/add', [ChinthaerController::class, 'add'])->name('add.chinthaer')->middleware('auth');
 Route::post('/chinthaer/edit/{id}', [ChinthaerController::class, 'update'])->name('edit.chinthaer')->middleware('auth');
+Route::post('/chinthaer/image-gallery/{id}', [ChinthaerGalleryController::class, 'addImage'])->name('add.chinthaer.image')->middleware('auth');
+
 Route::delete('/chinthaer/delete/{id}', [ChinthaerController::class, 'delete'])->name('delete.chinthaer')->middleware('auth');
+Route::delete('/delete-image/publications/{id}', [ChinthaerGalleryController::class, 'deleteImage'])->name('delete.chinthaer.image')->middleware('auth');

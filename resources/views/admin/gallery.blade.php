@@ -22,7 +22,6 @@
   <link href="{{ asset('admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('admin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
   <link href="{{ asset('admin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('admin/vendor/lineawesome/css/line-awesome.min.css') }}" rel="stylesheet">
   <link href="{{ asset('admin/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
   <link href="{{ asset('admin/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
@@ -46,7 +45,7 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="{{ url('/management/dashboard') }}" class="nav-link scrollto"><i class="bx bxs-home"></i> <span>HOME</span></a></li>
-        <li><a href="{{ url('/management/works') }}" class="nav-link scrollto active"><i class="bx bxs-building-house"></i> <span>WORKS</span></a></li>
+        <li><a href="{{ url('/management/works') }}" class="nav-link scrollto"><i class="bx bxs-building-house"></i> <span>WORKS</span></a></li>
         <li><a href="{{ url('/management/office') }}" class="nav-link scrollto"><i class="bx bxs-briefcase"></i> <span>OFFICE</span></a></li>
         <li><a href="{{ url('/management/archives') }}" class="nav-link scrollto"><i class="bx bxs-file-archive"></i> <span>ARCHIVES</span></a></li>
         <li><a href="{{ url('/management/change-password') }}" class="nav-link scrollto"><i class="bx bxs-lock-open-alt"></i> <span>CHANGE PASSWORD</span></a></li>
@@ -133,8 +132,30 @@
         <input type="file" class="form-control mb-3 mt-2" name="images[]" multiple>
         <button type="submit" class="btn btn-all">Add Image</button>
       </form>
+      
+       @elseif ($context === 'publications')
 
-      @endif
+      <h3>Publication Gallery</h3>
+
+      <form id="add-{{ $context }}-form" method="post" action="{{ route('add.' . $context . '.image', ['id' => $model['id']]) }}" enctype="multipart/form-data">
+        @csrf
+        <label>Image</label>
+        <input type="file" class="form-control mb-3 mt-2" name="images[]" multiple>
+        <button type="submit" class="btn btn-all">Add Image</button>
+      </form>
+
+      @elseif ($context === 'chinthaer')
+
+      <h3>Chinthaer Gallery</h3>
+
+      <form id="add-{{ $context }}-form" method="post" action="{{ route('add.' . $context . '.image', ['id' => $model['id']]) }}" enctype="multipart/form-data">
+        @csrf
+        <label>Image</label>
+        <input type="file" class="form-control mb-3 mt-2" name="images[]" multiple>
+        <button type="submit" class="btn btn-all">Add Image</button>
+      </form>
+
+      @endif 
 
 
 
@@ -175,7 +196,7 @@
                     <form id="delete-form" method="post" action="{{ route('delete.' . $context . '.image', ['id' => $image['id']]) }}">
                       @csrf
                       @method('DELETE')
-                      <button type="submit" class="btn btn-all" data-bs-dismiss="modal">Delete Work</button>
+                      <button type="submit" class="btn btn-all" data-bs-dismiss="modal">Delete Image</button>
                     </form>
                   </div>
                 </div>

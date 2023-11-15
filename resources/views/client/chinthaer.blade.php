@@ -145,15 +145,25 @@
 
                 <h2 class="mb10 blkcolor">CHINTHAER</h2>
 
-                @foreach ($chinthaers as $chinthaer)
-                <img src="{{ asset('storage/' . $chinthaer->image)}}" class="paraimg">
-                <h3 class="mb0 blkcolor">{{ $chinthaer->name }}</h3>
-                <p>
-                <div class="row read-more-less" data-id="100">
-                  <p class="read-toggle" data-id='{{ $chinthaer->id }}'>{!! nl2br($chinthaer->description) !!}</p>
+                <div style="width: 100%; float:left;">
+
+                  @foreach ($chinthaers as $chinthaer)
+                  <a href="{{ url('chinthaer-details', $chinthaer->id) }}"><img src="{{ asset('storage/' . $chinthaer->image)}}" class="paraimg"></a>
+                  <a href="{{ url('chinthaer-details', $chinthaer->id) }}">
+                    <h3 class="mb0 blkcolor">{{ $chinthaer->name }}</h3>
+                  </a>
+                  <p>
+                  <div class="row read-more-less" data-id="100">
+                    <a href="{{ url('chinthaer-details', $chinthaer->id) }}">
+                      <p class="read-toggle" data-id='{{ $chinthaer->id }}'>{!! nl2br($chinthaer->description) !!}</p>
+                    </a>
+                  </div>
+                  </p>
+                  @endforeach
+
                 </div>
-                </p>
-                @endforeach
+
+
               </div>
             </div>
           </div>

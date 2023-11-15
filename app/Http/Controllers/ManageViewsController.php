@@ -27,8 +27,8 @@ class ManageViewsController extends Controller
         $nonNumericPart = isset($matches[2]) ? $matches[2] : '';
         $nextHomeOrder = $numericPart + 1 . $nonNumericPart;
 
-        $homes = Home::orderBy('order', 'desc')
-                ->orderBy('order_suffix', 'desc')
+        $homes = Home::orderBy('order', 'asc')
+                ->orderBy('order_suffix', 'asc')
                 ->get();
 
         $urbandesignOrder = UrbanDesign::max('id');
@@ -38,8 +38,8 @@ class ManageViewsController extends Controller
         $nonNumericPart = isset($matches[2]) ? $matches[2] : '';
         $nextUrbanDesignOrder = $numericPart + 1 . $nonNumericPart;
 
-        $urbandesigns = UrbanDesign::orderBy('order', 'desc')
-                        ->orderBy('order_suffix', 'desc')
+        $urbandesigns = UrbanDesign::orderBy('order', 'asc')
+                        ->orderBy('order_suffix', 'asc')
                         ->get();
 
         $institutionOrder = Institution::max('id');
@@ -49,8 +49,8 @@ class ManageViewsController extends Controller
         $nonNumericPart = isset($matches[2]) ? $matches[2] : '';
         $nextInstitutionOrder = $numericPart + 1 . $nonNumericPart;
 
-        $institutions = Institution::orderBy('order', 'desc')
-                        ->orderBy('order_suffix', 'desc')
+        $institutions = Institution::orderBy('order', 'asc')
+                        ->orderBy('order_suffix', 'asc')
                         ->get();
 
         $commercialOrder = Commercial::max('id');
@@ -60,8 +60,8 @@ class ManageViewsController extends Controller
         $nonNumericPart = isset($matches[2]) ? $matches[2] : '';
         $nextCommercialOrder = $numericPart + 1 . $nonNumericPart;
 
-        $commercials = Commercial::orderBy('order', 'desc')
-                        ->orderBy('order_suffix', 'desc')
+        $commercials = Commercial::orderBy('order', 'asc')
+                        ->orderBy('order_suffix', 'asc')
                         ->get();
 
         return view('admin.works', compact('homes', 'urbandesigns', 'institutions', 'commercials', 'nextHomeOrder', 'nextUrbanDesignOrder', 'nextInstitutionOrder', 'nextCommercialOrder'));
@@ -71,7 +71,7 @@ class ManageViewsController extends Controller
     // view office
     public function viewOffice()
     {
-        $aboutus = AboutUs::orderBy('id', 'desc')->get();
+        $aboutus = AboutUs::orderBy('id', 'asc')->get();
 
         $awardOrder = Award::max('id');
 
@@ -80,8 +80,8 @@ class ManageViewsController extends Controller
         $nonNumericPart = isset($matches[2]) ? $matches[2] : '';
         $nextAwardOrder = $numericPart + 1 . $nonNumericPart;
 
-        $awards = Award::orderBy('order', 'desc')
-                ->orderBy('order_suffix', 'desc')
+        $awards = Award::orderBy('order', 'asc')
+                ->orderBy('order_suffix', 'asc')
                 ->get();
 
         $peopleOrder = People::max('id');
@@ -91,11 +91,11 @@ class ManageViewsController extends Controller
         $nonNumericPart = isset($matches[2]) ? $matches[2] : '';
         $nextPeopleOrder = $numericPart + 1 . $nonNumericPart;
 
-        $people = People::orderBy('order', 'desc')
-                ->orderBy('order_suffix', 'desc')
+        $people = People::orderBy('order', 'asc')
+                ->orderBy('order_suffix', 'asc')
                 ->get();
 
-        $contact = Contact::orderBy('id', 'desc')->get();
+        $contact = Contact::orderBy('id', 'asc')->get();
 
         return view('admin.office', compact('aboutus', 'awards', 'people', 'contact', 'nextAwardOrder', 'nextPeopleOrder'));
     }
@@ -110,8 +110,8 @@ class ManageViewsController extends Controller
         $nonNumericPart = isset($matches[2]) ? $matches[2] : '';
         $nextPublicationOrder = $numericPart + 1 . $nonNumericPart;
 
-        $publications = Publication::orderBy('order', 'desc')
-                        ->orderBy('order_suffix', 'desc')
+        $publications = Publication::orderBy('order', 'asc')
+                        ->orderBy('order_suffix', 'asc')
                         ->get();
 
         $chinthaerOrder = Chinthaer::max('id');
@@ -121,8 +121,8 @@ class ManageViewsController extends Controller
         $nonNumericPart = isset($matches[2]) ? $matches[2] : '';
         $nextChinthaerOrder = $numericPart + 1 . $nonNumericPart;
 
-        $chinthaers = Chinthaer::orderBy('order', 'desc')
-                    ->orderBy('order_suffix', 'desc')
+        $chinthaers = Chinthaer::orderBy('order', 'asc')
+                    ->orderBy('order_suffix', 'asc')
                     ->get();
 
         return view('admin.archives', compact('publications', 'chinthaers', 'nextPublicationOrder', 'nextChinthaerOrder')); 
@@ -152,6 +152,18 @@ class ManageViewsController extends Controller
         elseif($context === 'commercial')
         {
             $model = Commercial::with(['gallery' => function ($query) {
+                $query->orderBy('id', 'desc');
+            }])->find($id);
+        }
+        elseif($context === 'publications')
+        {
+            $model = Publication::with(['gallery' => function ($query) {
+                $query->orderBy('id', 'desc');
+            }])->find($id);
+        }
+        elseif($context === "chinthaer")
+        {
+            $model = Chinthaer::with(['gallery' => function ($query) {
                 $query->orderBy('id', 'desc');
             }])->find($id);
         }

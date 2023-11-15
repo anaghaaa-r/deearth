@@ -1,6 +1,13 @@
+
 login
 logout
 dashboard
+
+
+admin -> gallery
+web.php
+admin -> archives
+
 
 edited style.css and custom.css in admin
 edited all blades in admin

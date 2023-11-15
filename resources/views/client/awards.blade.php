@@ -67,7 +67,7 @@
       <div class="col-inner lh-adjust">
 
         <div class="relative">
-          <h1><a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" ></a></h1>
+          <h1><a href="{{ url('/') }}"><img src="{{ asset('img/logo.svg') }}" width="180" height="35"></a></h1>
 
           <div class="nav">
             <ul>

@@ -86,7 +86,10 @@
                     </div>
                 </div>
             </div>
-
+            <?php
+            $publicationReadMore = 1;
+            $chinthaerReadMore = 1;
+            ?>
 
             <h2>ARCHIVES</h2>
             <div class="row">
@@ -174,9 +177,14 @@
                                 <td>{{ $publication->order . $publication->order_suffix }}</td>
                                 <td>{{ $publication->name }}</td>
                                 <td>
+                                    @if($publication->description == NULL)
+                                    <p></p>
+                                    @else
                                     <div class="row read-more-less" data-id="100">
-                                        <p class="read-toggle" data-id='{{ $publication->title }}'>{!! nl2br($publication->description) !!}</p>
+                                        <p class="read-toggle" data-id='{{ $publicationReadMore++ }}'>{!! nl2br($publication->description) !!}</p>
                                     </div>
+                                    @endif
+
                                 </td>
                                 <td>
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
@@ -190,6 +198,11 @@
                                     </div>
                                 </td>
                                 <td>
+
+                                    <!-- publications gallery -->
+                                    <a href="{{ route('view.gallery', [ 'context' => 'publications', 'id' => $publication->id ]) }}" style="text-decoration: none;">
+                                        <i class="bx bx-images"></i>
+                                    </a>
 
                                     <!-- Edit Modal -->
                                     <a data-bs-toggle="modal" data-bs-target="#PublicationsEditModal_{{ $publication->id }}">
@@ -277,7 +290,7 @@
                                     <h1 class="modal-title fs-5" id="ChinthaerAddModalLabel">Add Chinthaer</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <form id="add-chinthaer-form" method="post" action="{{ route('add.chinthaer') }}" class="px-5" enctype="multipart/form-data">
+                                <form id="add-chinthaer-form" action="{{ route('add.chinthaer') }}" method="post" class="px-5" enctype="multipart/form-data">
                                     @csrf
                                     <div class="modal-body">
 
@@ -318,11 +331,16 @@
                                 <td>{{ $chinthaer->name }}</td>
                                 <td>
                                     <div class="row read-more-less" data-id="100">
-                                        <p class="read-toggle" data-id='{{ $chinthaer->title }}'>{!! nl2br($chinthaer->description) !!}</p>
+                                        <p class="read-toggle" data-id='{{ $chinthaerReadMore++ }}'>{!! nl2br($chinthaer->description) !!}</p>
                                     </div>
                                 </td>
                                 <td><img src="{{ asset('storage/' . $chinthaer->image) }}" alt="image" class="archive"></td>
                                 <td>
+
+                                    <!-- chinthaer gallery -->
+                                    <a href="{{ route('view.gallery', [ 'context' => 'chinthaer', 'id' => $chinthaer->id ]) }}" style="text-decoration: none;">
+                                        <i class="bx bx-images"></i>
+                                    </a>
 
                                     <!-- Edit Modal -->
                                     <a data-bs-toggle="modal" data-bs-target="#ChinthaerEditModal_{{ $chinthaer->id }}">
